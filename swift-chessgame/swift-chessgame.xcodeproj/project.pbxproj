@@ -17,7 +17,18 @@
 		AADE8C34286055C1002879BA /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE8C33286055C1002879BA /* Empty.swift */; };
 		AADE8C3628605790002879BA /* GameMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE8C3528605790002879BA /* GameMap.swift */; };
 		AADE8C38286057D8002879BA /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE8C37286057D8002879BA /* Position.swift */; };
+		AADE8C7C28605958002879BA /* swift_chessgameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE8C7B28605958002879BA /* swift_chessgameTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AADE8C7D28605958002879BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AADE8C0F2860520C002879BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AADE8C162860520C002879BA;
+			remoteInfo = "swift-chessgame";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		AADE8C172860520C002879BA /* swift-chessgame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-chessgame.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,10 +43,19 @@
 		AADE8C33286055C1002879BA /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
 		AADE8C3528605790002879BA /* GameMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMap.swift; sourceTree = "<group>"; };
 		AADE8C37286057D8002879BA /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		AADE8C7928605958002879BA /* swift-chessgameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swift-chessgameTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AADE8C7B28605958002879BA /* swift_chessgameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swift_chessgameTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		AADE8C142860520C002879BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AADE8C7628605958002879BA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -49,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				AADE8C192860520C002879BA /* swift-chessgame */,
+				AADE8C7A28605958002879BA /* swift-chessgameTests */,
 				AADE8C182860520C002879BA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				AADE8C172860520C002879BA /* swift-chessgame.app */,
+				AADE8C7928605958002879BA /* swift-chessgameTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,6 +117,14 @@
 			path = Piece;
 			sourceTree = "<group>";
 		};
+		AADE8C7A28605958002879BA /* swift-chessgameTests */ = {
+			isa = PBXGroup;
+			children = (
+				AADE8C7B28605958002879BA /* swift_chessgameTests.swift */,
+			);
+			path = "swift-chessgameTests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -115,6 +145,24 @@
 			productReference = AADE8C172860520C002879BA /* swift-chessgame.app */;
 			productType = "com.apple.product-type.application";
 		};
+		AADE8C7828605958002879BA /* swift-chessgameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AADE8C7F28605958002879BA /* Build configuration list for PBXNativeTarget "swift-chessgameTests" */;
+			buildPhases = (
+				AADE8C7528605958002879BA /* Sources */,
+				AADE8C7628605958002879BA /* Frameworks */,
+				AADE8C7728605958002879BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AADE8C7E28605958002879BA /* PBXTargetDependency */,
+			);
+			name = "swift-chessgameTests";
+			productName = "swift-chessgameTests";
+			productReference = AADE8C7928605958002879BA /* swift-chessgameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -127,6 +175,10 @@
 				TargetAttributes = {
 					AADE8C162860520C002879BA = {
 						CreatedOnToolsVersion = 13.4;
+					};
+					AADE8C7828605958002879BA = {
+						CreatedOnToolsVersion = 13.4;
+						TestTargetID = AADE8C162860520C002879BA;
 					};
 				};
 			};
@@ -144,6 +196,7 @@
 			projectRoot = "";
 			targets = (
 				AADE8C162860520C002879BA /* swift-chessgame */,
+				AADE8C7828605958002879BA /* swift-chessgameTests */,
 			);
 		};
 /* End PBXProject section */
@@ -156,6 +209,13 @@
 				AADE8C272860520D002879BA /* LaunchScreen.storyboard in Resources */,
 				AADE8C242860520D002879BA /* Assets.xcassets in Resources */,
 				AADE8C222860520C002879BA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AADE8C7728605958002879BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,7 +236,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AADE8C7528605958002879BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AADE8C7C28605958002879BA /* swift_chessgameTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AADE8C7E28605958002879BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AADE8C162860520C002879BA /* swift-chessgame */;
+			targetProxy = AADE8C7D28605958002879BA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AADE8C202860520C002879BA /* Main.storyboard */ = {
@@ -366,6 +442,40 @@
 			};
 			name = Release;
 		};
+		AADE8C8028605958002879BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "higgs1022.swift-chessgameTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/swift-chessgame.app/swift-chessgame";
+			};
+			name = Debug;
+		};
+		AADE8C8128605958002879BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "higgs1022.swift-chessgameTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/swift-chessgame.app/swift-chessgame";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -383,6 +493,15 @@
 			buildConfigurations = (
 				AADE8C2C2860520D002879BA /* Debug */,
 				AADE8C2D2860520D002879BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AADE8C7F28605958002879BA /* Build configuration list for PBXNativeTarget "swift-chessgameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AADE8C8028605958002879BA /* Debug */,
+				AADE8C8128605958002879BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
