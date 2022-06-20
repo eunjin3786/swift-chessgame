@@ -22,7 +22,7 @@
 		C226EDE028605CDA0070177F /* Bishop.swift in Sources */ = {isa = PBXBuildFile; fileRef = C226EDDF28605CDA0070177F /* Bishop.swift */; };
 		C226EDE328605D180070177F /* Luke.swift in Sources */ = {isa = PBXBuildFile; fileRef = C226EDE228605D180070177F /* Luke.swift */; };
 		C226EDE52860725C0070177F /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = C226EDE42860725C0070177F /* Position.swift */; };
-		C226EDE7286078150070177F /* BaseHorse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C226EDE6286078150070177F /* BaseHorse.swift */; };
+		C226EDE7286078150070177F /* Horse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C226EDE6286078150070177F /* Horse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +62,7 @@
 		C226EDDF28605CDA0070177F /* Bishop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bishop.swift; sourceTree = "<group>"; };
 		C226EDE228605D180070177F /* Luke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Luke.swift; sourceTree = "<group>"; };
 		C226EDE42860725C0070177F /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
-		C226EDE6286078150070177F /* BaseHorse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHorse.swift; sourceTree = "<group>"; };
+		C226EDE6286078150070177F /* Horse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Horse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,7 +159,7 @@
 				C226EDDB28605C550070177F /* Pawn.swift */,
 				C226EDDF28605CDA0070177F /* Bishop.swift */,
 				C226EDE228605D180070177F /* Luke.swift */,
-				C226EDE6286078150070177F /* BaseHorse.swift */,
+				C226EDE6286078150070177F /* Horse.swift */,
 			);
 			path = Horse;
 			sourceTree = "<group>";
@@ -309,7 +309,7 @@
 				C226EDD2286059960070177F /* Board.swift in Sources */,
 				C226EDDC28605C550070177F /* Pawn.swift in Sources */,
 				C226EDE028605CDA0070177F /* Bishop.swift in Sources */,
-				C226EDE7286078150070177F /* BaseHorse.swift in Sources */,
+				C226EDE7286078150070177F /* Horse.swift in Sources */,
 				C226EDDE28605C620070177F /* HorseOnBoard.swift in Sources */,
 				C226ED90286056C90070177F /* SceneDelegate.swift in Sources */,
 				C226EDE52860725C0070177F /* Position.swift in Sources */,
