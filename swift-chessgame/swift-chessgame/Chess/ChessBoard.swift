@@ -46,32 +46,35 @@ class ChessBoard {
         ]
     }
     
-    func displayFull() {
+    func displayFull() -> String {
         
-        
-        
+        var rtnString = Array<String>.init()
+        for i in 0..<pieces.count {
+            rtnString.append(display(row: i))
+        }
+        return rtnString.joined(separator: "\n")
     }
     
     func display(row: Int) -> String {
         
-        
-        return ""
+        return pieces[row].map { String($0?.display() ?? ".") }.joined(separator: "")
     }
     
     func score(color: PieceColor) -> Int {
         
-        
-        
-        return 0
+        return pieces.flatMap { $0 }
+            .compactMap { $0 }
+            .filter { $0.color == color }
+            .compactMap { $0.type.score }
+            .reduce(0, +)
     }
     
     // A1 -> (0,0) , H2 -> (1, 7) 형태로 index 튜플로 반환
-    func interpreter(input: String) -> (Int, Int) {
+    func interpreter(input: String) -> (Int, Int)? {
      
         
         
         
-        
-        return (0,0)
+        return nil
     }
 }

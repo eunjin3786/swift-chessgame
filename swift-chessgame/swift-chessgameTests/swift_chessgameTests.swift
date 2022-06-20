@@ -25,16 +25,31 @@ class swift_chessgameTests: XCTestCase {
         // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
         // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
         
-        var game = ChessBoard()
+        let game = ChessBoard()
         
         game.setupNewGame()
         
-        XCTAssertTrue(game.arr.count == 8)
-        XCTAssertTrue(game.arr[0].count == 8)
+        XCTAssertTrue(game.pieces.count == 8)
+        XCTAssertTrue(game.pieces[0].count == 8)
+        XCTAssertTrue(game.display(row: 0) == "♜♞♝.♛♝♞♜")
+        XCTAssertTrue(game.display(row: 1) == "♟♟♟♟♟♟♟♟")
+        XCTAssertTrue(game.display(row: 2) == "........")
+        XCTAssertTrue(game.display(row: 6) == "♙♙♙♙♙♙♙♙")
+        XCTAssertTrue(game.display(row: 7) == "♖♘♗.♕♗♘♖")
         
-        
-        XCTAssertTrue(game.display(0) == "........")
-        
+        XCTAssertTrue(game.displayFull() == """
+♜♞♝.♛♝♞♜
+♟♟♟♟♟♟♟♟
+........
+........
+........
+........
+♙♙♙♙♙♙♙♙
+♖♘♗.♕♗♘♖
+""")
+            
+        XCTAssertTrue(game.score(color: .White) == 39)
+        XCTAssertTrue(game.score(color: .Black) == 39)
     }
 
     func testPerformanceExample() throws {
