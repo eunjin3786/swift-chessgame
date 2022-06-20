@@ -13,6 +13,10 @@
 		AADE8C222860520C002879BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AADE8C202860520C002879BA /* Main.storyboard */; };
 		AADE8C242860520D002879BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AADE8C232860520D002879BA /* Assets.xcassets */; };
 		AADE8C272860520D002879BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AADE8C252860520D002879BA /* LaunchScreen.storyboard */; };
+		AADE8C312860530B002879BA /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE8C302860530B002879BA /* Board.swift */; };
+		AADE8C34286055C1002879BA /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE8C33286055C1002879BA /* Empty.swift */; };
+		AADE8C3628605790002879BA /* GameMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE8C3528605790002879BA /* GameMap.swift */; };
+		AADE8C38286057D8002879BA /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE8C37286057D8002879BA /* Position.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		AADE8C232860520D002879BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AADE8C262860520D002879BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AADE8C282860520D002879BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AADE8C302860530B002879BA /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		AADE8C33286055C1002879BA /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
+		AADE8C3528605790002879BA /* GameMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMap.swift; sourceTree = "<group>"; };
+		AADE8C37286057D8002879BA /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,7 @@
 		AADE8C192860520C002879BA /* swift-chessgame */ = {
 			isa = PBXGroup;
 			children = (
+				AADE8C2F286052FD002879BA /* Chess */,
 				AADE8C1A2860520C002879BA /* AppDelegate.swift */,
 				AADE8C1C2860520C002879BA /* SceneDelegate.swift */,
 				AADE8C1E2860520C002879BA /* ViewController.swift */,
@@ -65,6 +74,25 @@
 				AADE8C282860520D002879BA /* Info.plist */,
 			);
 			path = "swift-chessgame";
+			sourceTree = "<group>";
+		};
+		AADE8C2F286052FD002879BA /* Chess */ = {
+			isa = PBXGroup;
+			children = (
+				AADE8C322860558F002879BA /* Piece */,
+				AADE8C302860530B002879BA /* Board.swift */,
+				AADE8C3528605790002879BA /* GameMap.swift */,
+				AADE8C37286057D8002879BA /* Position.swift */,
+			);
+			path = Chess;
+			sourceTree = "<group>";
+		};
+		AADE8C322860558F002879BA /* Piece */ = {
+			isa = PBXGroup;
+			children = (
+				AADE8C33286055C1002879BA /* Empty.swift */,
+			);
+			path = Piece;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +166,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AADE8C38286057D8002879BA /* Position.swift in Sources */,
 				AADE8C1F2860520C002879BA /* ViewController.swift in Sources */,
 				AADE8C1B2860520C002879BA /* AppDelegate.swift in Sources */,
+				AADE8C34286055C1002879BA /* Empty.swift in Sources */,
+				AADE8C312860530B002879BA /* Board.swift in Sources */,
+				AADE8C3628605790002879BA /* GameMap.swift in Sources */,
 				AADE8C1D2860520C002879BA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
