@@ -31,6 +31,9 @@ protocol GamePiece: Piece {
 extension GamePiece {
     
     func movablePositions(currentPosition: Position, boardMatrix: Int) -> [Position] {
+//         TODO: -
+//         체스말은 현재 위치를 기준으로 이동할 수 있는 모든 위치를 제공한다.
+//         다른 말이 있는지 여부는 판단하지 않는다.
         return []
     }
 }
