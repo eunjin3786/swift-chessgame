@@ -18,19 +18,19 @@ class SwiftChessGameTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testPosition()  {
+        let a1 = Position(value: "A1")
+        XCTAssertNotNil(a1)
+        XCTAssertTrue(a1?.rank == 0 && a1?.file == 0)
+        
+        let a7 = Position(value: "H8")
+        XCTAssertNotNil(a7)
+        XCTAssertTrue(a7?.rank == 7 && a7?.file == 7)
+        
+        let z4 = Position(value: "Z4")
+        XCTAssertNil(z4)
+        
+        let unknown = Position(value: "Hello World")
+        XCTAssertNil(unknown)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

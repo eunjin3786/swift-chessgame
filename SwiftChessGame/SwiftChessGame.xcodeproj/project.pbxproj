@@ -16,6 +16,12 @@
 		9CD86CFE2860493F00AC4EA2 /* SwiftChessGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD86CFD2860493F00AC4EA2 /* SwiftChessGameTests.swift */; };
 		9CD86D082860493F00AC4EA2 /* SwiftChessGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD86D072860493F00AC4EA2 /* SwiftChessGameUITests.swift */; };
 		9CD86D0A2860493F00AC4EA2 /* SwiftChessGameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD86D092860493F00AC4EA2 /* SwiftChessGameUITestsLaunchTests.swift */; };
+		9CD86D182860500A00AC4EA2 /* PieceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD86D172860500A00AC4EA2 /* PieceType.swift */; };
+		9CD86D1A2860504E00AC4EA2 /* PieceColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD86D192860504E00AC4EA2 /* PieceColor.swift */; };
+		9CD86D1C2860506C00AC4EA2 /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD86D1B2860506C00AC4EA2 /* Piece.swift */; };
+		9CD86D1E286050B000AC4EA2 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD86D1D286050B000AC4EA2 /* Board.swift */; };
+		9CD86D20286050C300AC4EA2 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD86D1F286050C300AC4EA2 /* Position.swift */; };
+		9CD86D22286062D000AC4EA2 /* BoardOn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD86D21286062D000AC4EA2 /* BoardOn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		9CD86D032860493F00AC4EA2 /* SwiftChessGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftChessGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CD86D072860493F00AC4EA2 /* SwiftChessGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftChessGameUITests.swift; sourceTree = "<group>"; };
 		9CD86D092860493F00AC4EA2 /* SwiftChessGameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftChessGameUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9CD86D172860500A00AC4EA2 /* PieceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceType.swift; sourceTree = "<group>"; };
+		9CD86D192860504E00AC4EA2 /* PieceColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceColor.swift; sourceTree = "<group>"; };
+		9CD86D1B2860506C00AC4EA2 /* Piece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
+		9CD86D1D286050B000AC4EA2 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		9CD86D1F286050C300AC4EA2 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		9CD86D21286062D000AC4EA2 /* BoardOn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardOn.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +111,7 @@
 		9CD86CE52860493D00AC4EA2 /* SwiftChessGame */ = {
 			isa = PBXGroup;
 			children = (
+				9CD86D162860500000AC4EA2 /* Domain */,
 				9CD86CE62860493D00AC4EA2 /* AppDelegate.swift */,
 				9CD86CE82860493D00AC4EA2 /* SceneDelegate.swift */,
 				9CD86CEA2860493D00AC4EA2 /* ViewController.swift */,
@@ -125,6 +138,19 @@
 				9CD86D092860493F00AC4EA2 /* SwiftChessGameUITestsLaunchTests.swift */,
 			);
 			path = SwiftChessGameUITests;
+			sourceTree = "<group>";
+		};
+		9CD86D162860500000AC4EA2 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				9CD86D1D286050B000AC4EA2 /* Board.swift */,
+				9CD86D21286062D000AC4EA2 /* BoardOn.swift */,
+				9CD86D1B2860506C00AC4EA2 /* Piece.swift */,
+				9CD86D192860504E00AC4EA2 /* PieceColor.swift */,
+				9CD86D172860500A00AC4EA2 /* PieceType.swift */,
+				9CD86D1F286050C300AC4EA2 /* Position.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +286,13 @@
 			files = (
 				9CD86CEB2860493D00AC4EA2 /* ViewController.swift in Sources */,
 				9CD86CE72860493D00AC4EA2 /* AppDelegate.swift in Sources */,
+				9CD86D1C2860506C00AC4EA2 /* Piece.swift in Sources */,
+				9CD86D182860500A00AC4EA2 /* PieceType.swift in Sources */,
+				9CD86D22286062D000AC4EA2 /* BoardOn.swift in Sources */,
+				9CD86D1E286050B000AC4EA2 /* Board.swift in Sources */,
 				9CD86CE92860493D00AC4EA2 /* SceneDelegate.swift in Sources */,
+				9CD86D20286050C300AC4EA2 /* Position.swift in Sources */,
+				9CD86D1A2860504E00AC4EA2 /* PieceColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
