@@ -22,11 +22,13 @@ internal class Board: BoardAdaptable  {
         // generate pawns
         files.forEach { file in
             guard let whitePosition = Position(rank: 7, file: file, board: self),
-                  let blackPosition = Position(rank: 2, file: file, board: self) else {
+                  let blackPosition = Position(rank: 2, file: file, board: self),
+                  let whitePawn = Pawn(color: .white, position: whitePosition),
+                  let blackPawn = Pawn(color: .black, position: blackPosition) else {
                 fatalError("Failed to generate Board")
             }
-            self.whiteHorses.append(Pawn(color: .white, position: whitePosition))
-            self.blackHorses.append(Pawn(color: .black, position: blackPosition))
+            self.whiteHorses.append(whitePawn)
+            self.blackHorses.append(blackPawn)
         }
     }
     
