@@ -22,7 +22,7 @@ class PointTests: XCTestCase {
     
     func test_given8이상의좌표_when생성_then생성실패() throws {
         //given
-        let x = -1
+        let x = 9
         let y = 0
         
         //when
