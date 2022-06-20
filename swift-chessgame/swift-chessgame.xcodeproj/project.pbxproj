@@ -18,6 +18,8 @@
 		AADE8C3628605790002879BA /* GameMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE8C3528605790002879BA /* GameMap.swift */; };
 		AADE8C38286057D8002879BA /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE8C37286057D8002879BA /* Position.swift */; };
 		AADE8C7C28605958002879BA /* swift_chessgameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE8C7B28605958002879BA /* swift_chessgameTests.swift */; };
+		AADE8C8328605A41002879BA /* PointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE8C8228605A41002879BA /* PointTests.swift */; };
+		AADE8C8528605B15002879BA /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE8C37286057D8002879BA /* Position.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,7 @@
 		AADE8C37286057D8002879BA /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 		AADE8C7928605958002879BA /* swift-chessgameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swift-chessgameTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AADE8C7B28605958002879BA /* swift_chessgameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swift_chessgameTests.swift; sourceTree = "<group>"; };
+		AADE8C8228605A41002879BA /* PointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				AADE8C7B28605958002879BA /* swift_chessgameTests.swift */,
+				AADE8C8228605A41002879BA /* PointTests.swift */,
 			);
 			path = "swift-chessgameTests";
 			sourceTree = "<group>";
@@ -240,7 +244,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AADE8C8328605A41002879BA /* PointTests.swift in Sources */,
 				AADE8C7C28605958002879BA /* swift_chessgameTests.swift in Sources */,
+				AADE8C8528605B15002879BA /* Position.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

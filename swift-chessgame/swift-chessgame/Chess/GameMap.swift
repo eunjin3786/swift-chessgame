@@ -11,7 +11,7 @@ final class GameMap {
     private lazy var gameMap: [[ChessPiece]] = createEmptyMap()
     
     private func createEmptyMap() -> [[ChessPiece]] {
-        return [[Empty]] (repeating: Array(repeating: Empty(),count: 8 ),
+        return [[Empty]] (repeating: Array(repeating: Empty(x: 0, y: 0),count: 8 ),
                           count: 8)
     }
 }
