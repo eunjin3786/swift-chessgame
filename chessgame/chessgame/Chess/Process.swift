@@ -8,7 +8,7 @@
 import Foundation
 
 enum Process {
-    case input(String)
+    case input(String, String)
     case validate
     case caculate
     case form

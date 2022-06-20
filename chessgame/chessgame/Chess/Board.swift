@@ -32,5 +32,8 @@ enum File: String {
 struct Position {
     let rank: Rank
     let file: File
-    let piece: PieceType
+}
+
+class Board {
+    
 }

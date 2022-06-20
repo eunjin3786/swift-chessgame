@@ -7,71 +7,106 @@
 
 import Foundation
 
+enum Team {
+    case black
+    case white
+}
+
+enum moveDirection {
+    case left
+    case right
+    case up
+    case down
+    case upleft
+    case upright
+    case downleft
+    case downright
+}
+
+enum moveMomentum {
+    case one
+    case unlimit
+}
+
 enum PieceType: Int {
-    case Pawn = 1
-    case Bishop
-    case Knight
-    case Luke
-    case Queen
-    case King
+    case pawn = 1
+    case bishop
+    case knight
+    case luke
+    case queen
+    case king
     
     var capacity: Int {
         switch self {
-        case .Pawn:
+        case .pawn:
             return 8
-        case .Bishop, .Knight, .Luke:
+        case .bishop, .knight, .luke:
             return 2
-        case .Queen, .King:
+        case .queen, .king:
             return 1
         }
     }
     
     var score: Int {
         switch self {
-        case .Pawn:
+        case .pawn:
             return 1
-        case .Bishop, .Knight:
+        case .bishop, .knight:
             return 3
-        case .Luke:
+        case .luke:
             return 5
-        case .Queen:
+        case .queen:
             return 9
-        case .King:
+        case .king:
             return 0
         }
     }
+}
+
+
+class Piece {
+    let team: Team
+    let type: PieceType
+    let position: Position
     
-    func getMake(isBlack: Bool = false) -> String {
-        if isBlack {
-            switch self {
-            case .Pawn:
+    var mark: String {
+        if team == .black {
+            switch type {
+            case .pawn:
                 return "♟"
-            case .Bishop:
+            case .bishop:
                 return "♝"
-            case .Knight:
+            case .knight:
                 return "♞"
-            case .Luke:
+            case .luke:
                 return "♜"
-            case .Queen:
+            case .queen:
                 return "♛"
-            case .King:
+            case .king:
                 return "."
             }
         } else {
-            switch self {
-            case .Pawn:
+            switch type {
+            case .pawn:
                 return "♙"
-            case .Bishop:
+            case .bishop:
                 return "♗"
-            case .Knight:
+            case .knight:
                 return "♘"
-            case .Luke:
+            case .luke:
                 return "♖"
-            case .Queen:
+            case .queen:
                 return "♕"
-            case .King:
+            case .king:
                 return "."
             }
         }
     }
+    
+    required init(team: Team = .black, type: PieceType = .pawn, position: Position) {
+        self.team = team
+        self.type = type
+        self.position = position
+    }
+    
 }
