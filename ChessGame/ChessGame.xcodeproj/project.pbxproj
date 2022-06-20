@@ -44,6 +44,7 @@
 		3BA507ED286043B4005034CE /* ChessGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChessGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BA507F1286043B4005034CE /* ChessGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessGameUITests.swift; sourceTree = "<group>"; };
 		3BA507F3286043B4005034CE /* ChessGameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessGameUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3BA50800286046AD005034CE /* ChessLogic */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ChessLogic; path = ChessGame/ChessLogic; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +75,7 @@
 		3BA507CA286043B2005034CE = {
 			isa = PBXGroup;
 			children = (
+				3BA50800286046AD005034CE /* ChessLogic */,
 				3BA507D5286043B2005034CE /* ChessGame */,
 				3BA507E6286043B4005034CE /* ChessGameTests */,
 				3BA507F0286043B4005034CE /* ChessGameUITests */,
