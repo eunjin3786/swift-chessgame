@@ -14,6 +14,9 @@
 		3E1DDACF28607A6200EFE990 /* ChessgameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1DDACE28607A6200EFE990 /* ChessgameTests.swift */; };
 		3E1DDAD928607A6200EFE990 /* ChessgameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1DDAD828607A6200EFE990 /* ChessgameUITests.swift */; };
 		3E1DDADB28607A6200EFE990 /* ChessgameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1DDADA28607A6200EFE990 /* ChessgameUITestsLaunchTests.swift */; };
+		3E1DDAEA2860824800EFE990 /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1DDAE92860824800EFE990 /* Piece.swift */; };
+		3E1DDAEC286082D900EFE990 /* PieceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1DDAEB286082D900EFE990 /* PieceType.swift */; };
+		3E1DDAEE286084A300EFE990 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1DDAED286084A300EFE990 /* Board.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		3E1DDAD428607A6200EFE990 /* ChessgameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChessgameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E1DDAD828607A6200EFE990 /* ChessgameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessgameUITests.swift; sourceTree = "<group>"; };
 		3E1DDADA28607A6200EFE990 /* ChessgameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessgameUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3E1DDAE92860824800EFE990 /* Piece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
+		3E1DDAEB286082D900EFE990 /* PieceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceType.swift; sourceTree = "<group>"; };
+		3E1DDAED286084A300EFE990 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,9 @@
 			children = (
 				3E1DDABD28607A6100EFE990 /* ChessgameApp.swift */,
 				3E1DDABF28607A6100EFE990 /* ContentView.swift */,
+				3E1DDAED286084A300EFE990 /* Board.swift */,
+				3E1DDAE92860824800EFE990 /* Piece.swift */,
+				3E1DDAEB286082D900EFE990 /* PieceType.swift */,
 				3E1DDAC128607A6200EFE990 /* Assets.xcassets */,
 				3E1DDAC328607A6200EFE990 /* Preview Content */,
 			);
@@ -259,6 +268,9 @@
 			files = (
 				3E1DDAC028607A6100EFE990 /* ContentView.swift in Sources */,
 				3E1DDABE28607A6100EFE990 /* ChessgameApp.swift in Sources */,
+				3E1DDAEE286084A300EFE990 /* Board.swift in Sources */,
+				3E1DDAEC286082D900EFE990 /* PieceType.swift in Sources */,
+				3E1DDAEA2860824800EFE990 /* Piece.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
