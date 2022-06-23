@@ -3,10 +3,14 @@ import XCTest
 
 class BoardScoreTests: XCTestCase {
     
-    func test_score() {
+    func test_score_with_custom_pieces() {
         // given
-        let whitePieces: [Piece] = [Luke(color: .white), Knight(color: .white)]
-        let blackPieces: [Piece] = [Queen(color: .black), Luke(color: .black)]
+        let whitePieces: [Piece] = [
+            Luke(color: .white), Knight(color: .white)
+        ]
+        let blackPieces: [Piece] = [
+            Queen(color: .black), Luke(color: .black)
+        ]
         let board = Board(pieces: [
             whitePieces,
             blackPieces
@@ -22,5 +26,18 @@ class BoardScoreTests: XCTestCase {
         
         XCTAssertEqual(whiteScore, whiteExpected)
         XCTAssertEqual(blackScore, blackExpected)
+    }
+    
+    func test_score_when_pieces_is_empty() {
+        // given
+        let board = Board(pieces: [])
+        
+        // when
+        let whiteScore = board.score(of: .white)
+        let blackScore = board.score(of: .black)
+        
+        // then
+        XCTAssertEqual(whiteScore, 0)
+        XCTAssertEqual(blackScore, 0)
     }
 }
