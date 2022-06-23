@@ -32,7 +32,7 @@ struct BoardConfig {
 
 struct Board {
     
-    var pieces: [[GamePiece?]]
+    private(set) var pieces: [[GamePiece?]]
     
     init(pieces: [[GamePiece?]]? = nil) {
         self.pieces = pieces ?? BoardConfig._8by8
@@ -55,6 +55,13 @@ struct Board {
         }
         
         return fullText
+    }
+    
+    func score(of color: Color) -> Int {
+        return pieces.flatMap { $0 }
+            .filter { $0?.color == color }
+            .map { $0?.score ?? 0 }
+            .reduce(0, +)
     }
     
     func move(from: Position, to: Position) -> Bool {
