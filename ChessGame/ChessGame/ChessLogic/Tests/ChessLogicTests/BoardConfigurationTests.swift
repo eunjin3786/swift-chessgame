@@ -2,19 +2,8 @@ import XCTest
 @testable import ChessLogic
 
 class BoardConfigurationTests: XCTestCase {
-    
-    func test_board_should_be_initialized_8x8() {
-        // given
-        let board = Board()
-        
-        // then
-        XCTAssertEqual(board.pieces.count, 8)
-        for piece in board.pieces {
-            XCTAssertEqual(piece.count, 8)
-        }
-    }
-    
-    func test_board_should_be_initialiazed_with_pieces() {
+
+    func test_board_config_with_default_pieces() {
         // given
         let board = Board()
         
@@ -34,5 +23,24 @@ class BoardConfigurationTests: XCTestCase {
         ♖♘♗.♕♗♘♖
         """
         XCTAssertEqual(initialDisplayText, expected)
+    }
+    
+    func test_board_config_with_custom_pieces() {
+        // given
+        let board = Board(pieces: [
+            [Luke(color: .white), Knight(color: .white)],
+            [Luke(color: .black), Knight(color: .black)]
+        ])
+        
+        // when
+        let displayText = board.display(by: 2)
+        
+        // then
+        let expected =
+        """
+        ♖♘
+        ♜♞
+        """
+        XCTAssertEqual(displayText, expected)
     }
 }
