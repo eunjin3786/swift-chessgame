@@ -19,7 +19,7 @@ class BoardConfigurationTests: XCTestCase {
         let board = Board()
         
         // when
-        let initialDisplayText = board.display()
+        let initialDisplayText = board.display(by: 8)
         
         // then
         let expected =

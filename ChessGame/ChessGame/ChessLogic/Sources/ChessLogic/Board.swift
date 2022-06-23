@@ -1,20 +1,8 @@
 import Foundation
 
-struct Board {
+struct BoardConfig {
     
-    var pieces: [[GamePiece?]]
-    
-    init() {
-        pieces = [
-            firstLine(color: .black),
-            Array(repeating: Pawn(color: .black), count: 8),
-            Array(repeating: nil, count: 8),
-            Array(repeating: nil, count: 8),
-            Array(repeating: nil, count: 8),
-            Array(repeating: nil, count: 8),
-            Array(repeating: Pawn(color: .white), count: 8),
-            firstLine(color: .white)
-        ]
+    static var _8by8: [[GamePiece?]] {
         
         func firstLine(color: Color) -> [GamePiece?] {
             return [
@@ -28,17 +16,40 @@ struct Board {
                 Luke(color: color),
             ]
         }
+        
+        return [
+            firstLine(color: .black),
+            Array(repeating: Pawn(color: .black), count: 8),
+            Array(repeating: nil, count: 8),
+            Array(repeating: nil, count: 8),
+            Array(repeating: nil, count: 8),
+            Array(repeating: nil, count: 8),
+            Array(repeating: Pawn(color: .white), count: 8),
+            firstLine(color: .white)
+        ]
+    }
+}
+
+struct Board {
+    
+    var pieces: [[GamePiece?]]
+    
+    init(pieces: [[GamePiece?]]? = nil) {
+        self.pieces = pieces ?? BoardConfig._8by8
     }
     
-    func display() -> String {
+    func display(by matrix: Int) -> String {
+        let isInBoundary = pieces.count <= matrix && pieces.map { $0.count }.contains(where: { $0 > matrix }) == false
+        guard isInBoundary else { return "" }
+        
         var fullText = ""
         
-        for i in 0..<8 {
+        for i in 0..<matrix {
             if i != 0 {
                 fullText += "\n"
             }
             
-            for j in 0..<8 {
+            for j in 0..<matrix {
                 fullText += pieces[i][j]?.displayString ?? "."
             }
         }
