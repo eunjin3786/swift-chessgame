@@ -34,8 +34,8 @@ struct Board {
     
     private(set) var pieces: [[Piece?]]
     
-    init(pieces: [[Piece?]]? = nil) {
-        self.pieces = pieces ?? BoardConfig._8by8
+    init(pieces: [[Piece?]] = BoardConfig._8by8) {
+        self.pieces = pieces
     }
     
     func display(by matrix: Int) -> String {
