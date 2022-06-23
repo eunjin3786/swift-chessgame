@@ -5,8 +5,8 @@ class BoardScoreTests: XCTestCase {
     
     func test_score() {
         // given
-        let whitePieces: [GamePiece] = [Luke(color: .white), Knight(color: .white)]
-        let blackPieces: [GamePiece] = [Queen(color: .black), Luke(color: .black)]
+        let whitePieces: [Piece] = [Luke(color: .white), Knight(color: .white)]
+        let blackPieces: [Piece] = [Queen(color: .black), Luke(color: .black)]
         let board = Board(pieces: [
             whitePieces,
             blackPieces

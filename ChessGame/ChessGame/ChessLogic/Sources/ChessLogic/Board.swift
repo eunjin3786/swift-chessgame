@@ -2,9 +2,9 @@ import Foundation
 
 struct BoardConfig {
     
-    static var _8by8: [[GamePiece?]] {
+    static var _8by8: [[Piece?]] {
         
-        func firstLine(color: Color) -> [GamePiece?] {
+        func firstLine(color: Color) -> [Piece?] {
             return [
                 Luke(color: color),
                 Knight(color: color),
@@ -32,9 +32,9 @@ struct BoardConfig {
 
 struct Board {
     
-    private(set) var pieces: [[GamePiece?]]
+    private(set) var pieces: [[Piece?]]
     
-    init(pieces: [[GamePiece?]]? = nil) {
+    init(pieces: [[Piece?]]? = nil) {
         self.pieces = pieces ?? BoardConfig._8by8
     }
     

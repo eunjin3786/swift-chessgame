@@ -15,13 +15,10 @@ protocol Piece {
     var score: Int { get }
     var color: Color { get }
     var displayString: String { get }
-}
-
-protocol GamePiece: Piece {
     var moveDirections: [MoveDirection] { get }
 }
 
-extension GamePiece {
+extension Piece {
     
     func movablePositions(currentPosition: Position, boardMatrix: Int) -> [Position] {
 //         TODO: -
@@ -31,7 +28,7 @@ extension GamePiece {
     }
 }
                         
-struct Pawn: GamePiece {
+struct Pawn: Piece {
     let score: Int = 1
     let color: Color
     
@@ -49,7 +46,7 @@ struct Pawn: GamePiece {
     }
 }
 
-struct Bishop: GamePiece {
+struct Bishop: Piece {
     let score: Int = 3
     let color: Color
     
@@ -67,7 +64,7 @@ struct Bishop: GamePiece {
     }
 }
 
-struct Knight: GamePiece {
+struct Knight: Piece {
     let score: Int = 3
     let color: Color
     
@@ -85,7 +82,7 @@ struct Knight: GamePiece {
     }
 }
 
-struct Luke: GamePiece {
+struct Luke: Piece {
     let score: Int = 5
     let color: Color
     
@@ -103,7 +100,7 @@ struct Luke: GamePiece {
     }
 }
 
-struct Queen: GamePiece {
+struct Queen: Piece {
     let score: Int = 9
     let color: Color
     
