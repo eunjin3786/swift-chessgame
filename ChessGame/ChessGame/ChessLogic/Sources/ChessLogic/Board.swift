@@ -72,6 +72,10 @@ struct Board {
 //        만약, 다른 색상의 말이 to 위치에 있는 경우는 기존에 있던 말을 제거하고 이동한다.
         return true
     }
+    
+    func piece(of position: Position) -> Piece? {
+        return pieces[safe: position.x]?[safe: position.y] ?? nil
+    }
 }
 
 struct Position {
