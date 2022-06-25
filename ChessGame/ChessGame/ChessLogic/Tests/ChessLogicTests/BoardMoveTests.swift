@@ -3,6 +3,7 @@ import XCTest
 
 class BoardMoveTests: XCTestCase {
     
+    // MARK: - Get Piece
     func test_get_piece_with_valid_positions() {
         // given
         let board = Board(pieces: [
@@ -11,11 +12,11 @@ class BoardMoveTests: XCTestCase {
         ])
         
         // then
-        let piece1 = board.piece(of: Position(x: 0, y: 1))
+        let piece1 = board.piece(of: Position(file: 0, rank: 1))
         XCTAssertNotNil(piece1 as? Queen)
         XCTAssertEqual(piece1?.color, .black)
         
-        let piece2 = board.piece(of: Position(x: 1, y: 0))
+        let piece2 = board.piece(of: Position(file: 1, rank: 0))
         XCTAssertNotNil(piece2 as? Luke)
         XCTAssertEqual(piece2?.color, .white)
     }
@@ -28,10 +29,47 @@ class BoardMoveTests: XCTestCase {
         ])
         
         // then
-        let piece1 = board.piece(of: Position(x: 2, y: 1))
+        let piece1 = board.piece(of: Position(file: 2, rank: 1))
         XCTAssertNil(piece1)
         
-        let piece2 = board.piece(of: Position(x: -1, y: 0))
+        let piece2 = board.piece(of: Position(file: -1, rank: 0))
         XCTAssertNil(piece2)
+    }
+    
+    // MARK: - Move Piece
+    func test_move_should_be_failed_to_same_color() {
+        // given
+        var board = Board(pieces: [
+            [Luke(color: .black), Queen(color: .black)],
+            [Luke(color: .black), Queen(color: .white)]
+        ])
+        let initialSnapshot = board.snapshot()
+        
+        // when
+        let isMoved = board.move(from: Position(file: 0, rank: 0), to: Position(file: 0, rank: 1), userDirection: .north)
+
+        // then
+        XCTAssertFalse(isMoved)
+        XCTAssertEqual(board.snapshot(), initialSnapshot)
+    }
+
+    func test_move_should_be_succeed_to_different_color() {
+        // given
+        var board = Board(pieces: [
+            [Luke(color: .black), Queen(color: .black)],
+            [Luke(color: .white), Queen(color: .white)]
+        ])
+
+        // when
+        let isMoved = board.move(from: Position(file: 1, rank: 0), to: Position(file: 0, rank: 0), userDirection: .south)
+
+        // then
+        XCTAssertTrue(isMoved)
+        
+        let expected = Board(pieces: [
+            [Luke(color: .white), Queen(color: .black)],
+            [nil, Queen(color: .white)]
+        ])
+        XCTAssertEqual(board.snapshot(), expected.snapshot())
     }
 }

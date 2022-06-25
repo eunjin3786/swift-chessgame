@@ -17,17 +17,7 @@ protocol Piece {
     var displayString: String { get }
     var moveDirections: [MoveDirection] { get }
 }
-
-extension Piece {
-    
-    func movablePositions(currentPosition: Position, boardMatrix: Int) -> [Position] {
-//         TODO: -
-//         체스말은 현재 위치를 기준으로 이동할 수 있는 모든 위치를 제공한다.
-//         다른 말이 있는지 여부는 판단하지 않는다.
-        return []
-    }
-}
-                        
+                     
 struct Pawn: Piece {
     let score: Int = 1
     let color: Color

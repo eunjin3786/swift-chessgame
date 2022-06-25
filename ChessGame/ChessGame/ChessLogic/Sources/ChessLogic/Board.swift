@@ -31,30 +31,24 @@ struct BoardConfig {
 }
 
 struct Board {
-    
     private(set) var pieces: [[Piece?]]
     
     init(pieces: [[Piece?]] = BoardConfig._8by8) {
         self.pieces = pieces
     }
     
-    func display(by matrix: Int) -> String {
-        let isInBoundary = pieces.count <= matrix && pieces.map { $0.count }.contains(where: { $0 > matrix }) == false
-        guard isInBoundary else { return "" }
-        
+    func snapshot() -> String {
         var fullText = ""
-        
-        for i in 0..<matrix {
-            if i != 0 {
-                fullText += "\n"
-            }
-            
-            for j in 0..<matrix {
-                fullText += pieces[i][j]?.displayString ?? "."
-            }
+        for i in 0..<pieces.count {
+            let text = pieces[i].map { $0?.displayString ?? "." }.reduce("", +)
+            fullText += text
+            fullText += i == pieces.count - 1 ? "" : "\n"
         }
-        
         return fullText
+    }
+    
+    func display() -> String {
+        return snapshot()
     }
     
     func score(of color: Color) -> Int {
@@ -64,20 +58,30 @@ struct Board {
             .reduce(0, +)
     }
     
-    func move(from: Position, to: Position) -> Bool {
-//        TODO: -
-//        특정 말을 옮기는 메소드는 Board에서 제공한다.
-//        같은 색상의 말이 to 위치에 다른 말이 이미 있으면 옮길 수 없다.
-//        말을 옮길 수 있으면 true, 옮길 수 없으면 false를 리턴한다.
-//        만약, 다른 색상의 말이 to 위치에 있는 경우는 기존에 있던 말을 제거하고 이동한다.
+    mutating func move(from: Position, to: Position, userDirection: UserDirection) -> Bool {
+        if isValidMovement(from: from, to: to, userDirection: userDirection) {
+            pieces[to.file][to.rank] = pieces[from.file][from.rank]
+            pieces[from.file][from.rank] = nil
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func isValidMovement(from: Position, to: Position, userDirection: UserDirection) -> Bool {
+        guard let fromPiece = piece(of: from) else { return false }
+        let movablePositions =  fromPiece.movablePositions(currentPosition: from, currentUserDirection: userDirection, boardMatrix: pieces.count)
+        guard movablePositions.contains(where: { $0 == to }) else { return false }
+        
+        let toPiece = piece(of: to)
+        if let toPiece = toPiece, toPiece.color == fromPiece.color {
+            return false
+        }
+        
         return true
     }
     
     func piece(of position: Position) -> Piece? {
-        return pieces[safe: position.x]?[safe: position.y] ?? nil
+        return pieces[safe: position.file]?[safe: position.rank] ?? nil
     }
-}
-
-struct Position {
-    let x, y: Int
 }
