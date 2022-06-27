@@ -1,6 +1,6 @@
 import Foundation
 
-public protocol GameInputListener: AnyObject {
+public protocol GameInputListener {
     func start()
     func selectPiece(of position: Position, player: PlayerInfo)
     func movePiece(from: Position, to: Position, player: PlayerInfo)
@@ -47,8 +47,7 @@ extension Game: GameInputListener {
     }
     
     public func selectPiece(of position: Position, player: PlayerInfo) {
-        let piece = board.piece(of: position)
-        guard let piece = piece, piece.color == player.color else { return }
+        guard let piece = board.piece(of: position), piece.color == player.color else { return }
         let positions = piece.movablePositions(currentPosition: position, currentUserDirection: player.direction, boardMatrix: boardMatrix)
         presenter.displayMovablePositions(positions)
     }
