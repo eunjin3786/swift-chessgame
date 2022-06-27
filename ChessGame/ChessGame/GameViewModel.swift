@@ -15,7 +15,7 @@ class GameViewModel: ObservableObject {
     
     var currentPlayer: PlayerInfo?
     
-    var listener: GameInputListener?
+    weak var listener: GameInputListener?
 
     func startGame() {
         currentPlayer = player1

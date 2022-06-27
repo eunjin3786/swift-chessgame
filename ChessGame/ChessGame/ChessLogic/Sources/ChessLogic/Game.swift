@@ -1,6 +1,6 @@
 import Foundation
 
-public protocol GameInputListener {
+public protocol GameInputListener: AnyObject {
     func start()
     func selectPiece(of position: Position, player: PlayerInfo)
     func movePiece(from: Position, to: Position, player: PlayerInfo)

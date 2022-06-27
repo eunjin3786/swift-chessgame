@@ -3,16 +3,18 @@ import ChessLogic
 
 @main
 struct ChessGameApp: App {
+    let viewModel: GameViewModel
+    let game: Game
+    
+    init() {
+        viewModel = GameViewModel()
+        game = Game(presenter: viewModel)
+        viewModel.listener = game
+    }
     
     var body: some Scene {
         WindowGroup {
-            gameView
+            GameView(viewModel: viewModel)
         }
-    }
-    
-    private var gameView: GameView {
-        let viewModel = GameViewModel()
-        viewModel.listener = Game(presenter: viewModel)
-        return GameView(viewModel: viewModel)
     }
 }
