@@ -6,8 +6,8 @@ public enum UserDirection {
 }
 
 public struct Position: Equatable {
-    let rank: Int // 가로
-    let file: Int // 세로
+    public let rank: Int // 가로
+    public let file: Int // 세로
     
     public init(rank: Int, file: Int) {
         self.rank = rank

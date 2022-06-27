@@ -8,6 +8,7 @@ class GameTests: XCTestCase {
     var presenterMock: GamePresenterMock {
         return game.presenter as! GamePresenterMock
     }
+    var currentPlayer = PlayerInfo(direction: .north, color: .black)
     
     override func setUpWithError() throws {
         let presenterMock = GamePresenterMock()
@@ -34,7 +35,7 @@ class GameTests: XCTestCase {
         XCTAssertEqual(presenterMock.displayMovablePositionsCallCount, 0)
         
         // when
-        game.selectPiece(of: Position(rank: 0, file: 0), userDirection: .south)
+        game.selectPiece(of: Position(rank: 0, file: 0), player: currentPlayer)
         
         // then
         XCTAssertEqual(presenterMock.displayMovablePositionsCallCount, 1)
@@ -46,7 +47,7 @@ class GameTests: XCTestCase {
         XCTAssertEqual(presenterMock.displayScoreCallCount, 0)
         
         // when
-        game.movePiece(from: Position(rank: 0, file: 0), to: Position(rank: 1, file: 0), userDirection: .north)
+        game.movePiece(from: Position(rank: 0, file: 0), to: Position(rank: 1, file: 0), player: currentPlayer)
         
         // then
         XCTAssertEqual(presenterMock.displayBoardCallCount, 1)
@@ -59,7 +60,7 @@ class GameTests: XCTestCase {
         XCTAssertEqual(presenterMock.displayScoreCallCount, 0)
         
         // when
-        game.movePiece(from: Position(rank: 0, file: 0), to: Position(rank: 0, file: 0), userDirection: .north)
+        game.movePiece(from: Position(rank: 0, file: 0), to: Position(rank: 0, file: 0), player: currentPlayer)
         
         // then
         XCTAssertEqual(presenterMock.displayBoardCallCount, 1)

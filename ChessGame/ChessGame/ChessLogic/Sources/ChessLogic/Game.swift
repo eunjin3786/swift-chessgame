@@ -2,14 +2,24 @@ import Foundation
 
 public protocol GameInputListener: AnyObject {
     func start()
-    func selectPiece(of position: Position, userDirection: UserDirection)
-    func movePiece(from: Position, to: Position, userDirection: UserDirection)
+    func selectPiece(of position: Position, player: PlayerInfo)
+    func movePiece(from: Position, to: Position, player: PlayerInfo)
 }
 
 public protocol GamePresentable {
     func displayBoard(with snapshot: [[String]])
     func displayMovablePositions(_ positions: [Position])
     func displayScore(white: Int, black: Int)
+}
+
+public struct PlayerInfo {
+    let direction: UserDirection
+    let color: Color
+    
+    public init(direction: UserDirection, color: Color) {
+        self.direction = direction
+        self.color = color
+    }
 }
 
 public class Game {
@@ -36,14 +46,15 @@ extension Game: GameInputListener {
         presenter.displayBoard(with: board.snapshot())
     }
     
-    public func selectPiece(of position: Position, userDirection: UserDirection) {
+    public func selectPiece(of position: Position, player: PlayerInfo) {
         let piece = board.piece(of: position)
-        let positions = piece?.movablePositions(currentPosition: position, currentUserDirection: userDirection, boardMatrix: boardMatrix) ?? []
+        guard let piece = piece, piece.color == player.color else { return }
+        let positions = piece.movablePositions(currentPosition: position, currentUserDirection: player.direction, boardMatrix: boardMatrix)
         presenter.displayMovablePositions(positions)
     }
     
-    public func movePiece(from: Position, to: Position, userDirection: UserDirection) {
-        let isMoved = board.move(from: from, to: to, userDirection: userDirection)
+    public func movePiece(from: Position, to: Position, player: PlayerInfo) {
+        let isMoved = board.move(from: from, to: to, userDirection: player.direction)
         if isMoved {
             presenter.displayBoard(with: board.snapshot())
             presenter.displayScore(white: board.score(of: .white), black: board.score(of: .black))

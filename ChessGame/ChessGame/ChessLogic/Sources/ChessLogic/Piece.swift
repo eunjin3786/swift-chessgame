@@ -1,6 +1,6 @@
 import Foundation
 
-enum Color {
+public enum Color {
     case white
     case black
 }
