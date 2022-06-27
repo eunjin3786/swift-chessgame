@@ -10,8 +10,8 @@ class GameViewModel: ObservableObject {
     @Published var boardSnapshot: [[String]] = []
     @Published var higlightedPositions: [ViewPosition] = []
     
-    var player1 = PlayerInfo(direction: .north, color: .black)
-    var player2 = PlayerInfo(direction: .south, color: .white)
+    let player1 = PlayerInfo(direction: .north, color: .black)
+    let player2 = PlayerInfo(direction: .south, color: .white)
     
     var currentPlayer: PlayerInfo?
     
