@@ -47,6 +47,10 @@ struct Board {
         return fullText
     }
     
+    func snapshot() -> [[String]] {
+        return pieces.map { $0.map { $0?.displayString ?? "." }}
+    }
+    
     func display() -> String {
         return snapshot()
     }

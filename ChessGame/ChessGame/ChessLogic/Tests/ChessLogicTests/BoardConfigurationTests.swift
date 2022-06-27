@@ -8,7 +8,7 @@ class BoardConfigurationTests: XCTestCase {
         let board = Board()
         
         // when
-        let initialDisplayText = board.snapshot()
+        let initialDisplayText: String = board.snapshot()
         
         // then
         let expected =
@@ -33,7 +33,7 @@ class BoardConfigurationTests: XCTestCase {
         ])
         
         // when
-        let displayText = board.snapshot()
+        let displayText: String = board.snapshot()
         
         // then
         let expected =

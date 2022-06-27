@@ -43,7 +43,7 @@ class BoardMoveTests: XCTestCase {
             [Luke(color: .black), Queen(color: .black)],
             [Luke(color: .black), Queen(color: .white)]
         ])
-        let initialSnapshot = board.snapshot()
+        let initialSnapshot: String = board.snapshot()
         
         // when
         let isMoved = board.move(from: Position(rank: 0, file: 0), to: Position(rank: 0, file: 1), userDirection: .north)
@@ -62,7 +62,8 @@ class BoardMoveTests: XCTestCase {
 
         // when
         let isMoved = board.move(from: Position(rank: 1, file: 0), to: Position(rank: 0, file: 0), userDirection: .south)
-
+        let snapshot: String = board.snapshot()
+        
         // then
         XCTAssertTrue(isMoved)
         
@@ -70,6 +71,6 @@ class BoardMoveTests: XCTestCase {
             [Luke(color: .white), Queen(color: .black)],
             [nil, Queen(color: .white)]
         ])
-        XCTAssertEqual(board.snapshot(), expected.snapshot())
+        XCTAssertEqual(snapshot, expected.snapshot())
     }
 }

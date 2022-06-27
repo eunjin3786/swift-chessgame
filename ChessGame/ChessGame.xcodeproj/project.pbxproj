@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B5806D32869930100E7B8BF /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5806D22869930100E7B8BF /* GameViewModel.swift */; };
+		3B5806D6286994E200E7B8BF /* ChessLogic in Frameworks */ = {isa = PBXBuildFile; productRef = 3B5806D5286994E200E7B8BF /* ChessLogic */; };
 		3BA507D7286043B2005034CE /* ChessGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA507D6286043B2005034CE /* ChessGameApp.swift */; };
-		3BA507D9286043B2005034CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA507D8286043B2005034CE /* ContentView.swift */; };
+		3BA507D9286043B2005034CE /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA507D8286043B2005034CE /* GameView.swift */; };
 		3BA507DB286043B4005034CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BA507DA286043B4005034CE /* Assets.xcassets */; };
 		3BA507DE286043B4005034CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BA507DD286043B4005034CE /* Preview Assets.xcassets */; };
 		3BA507E8286043B4005034CE /* ChessGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA507E7286043B4005034CE /* ChessGameTests.swift */; };
@@ -34,9 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B5806D22869930100E7B8BF /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		3BA507D3286043B2005034CE /* ChessGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChessGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BA507D6286043B2005034CE /* ChessGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessGameApp.swift; sourceTree = "<group>"; };
-		3BA507D8286043B2005034CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3BA507D8286043B2005034CE /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		3BA507DA286043B4005034CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3BA507DD286043B4005034CE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3BA507E3286043B4005034CE /* ChessGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChessGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B5806D6286994E200E7B8BF /* ChessLogic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +76,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B5806D4286994E200E7B8BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3BA507CA286043B2005034CE = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +91,7 @@
 				3BA507E6286043B4005034CE /* ChessGameTests */,
 				3BA507F0286043B4005034CE /* ChessGameUITests */,
 				3BA507D4286043B2005034CE /* Products */,
+				3B5806D4286994E200E7B8BF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,7 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				3BA507D6286043B2005034CE /* ChessGameApp.swift */,
-				3BA507D8286043B2005034CE /* ContentView.swift */,
+				3B5806D22869930100E7B8BF /* GameViewModel.swift */,
+				3BA507D8286043B2005034CE /* GameView.swift */,
 				3BA507DA286043B4005034CE /* Assets.xcassets */,
 				3BA507DC286043B4005034CE /* Preview Content */,
 			);
@@ -145,6 +158,9 @@
 			dependencies = (
 			);
 			name = ChessGame;
+			packageProductDependencies = (
+				3B5806D5286994E200E7B8BF /* ChessLogic */,
+			);
 			productName = ChessGame;
 			productReference = 3BA507D3286043B2005034CE /* ChessGame.app */;
 			productType = "com.apple.product-type.application";
@@ -259,7 +275,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BA507D9286043B2005034CE /* ContentView.swift in Sources */,
+				3B5806D32869930100E7B8BF /* GameViewModel.swift in Sources */,
+				3BA507D9286043B2005034CE /* GameView.swift in Sources */,
 				3BA507D7286043B2005034CE /* ChessGameApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -585,6 +602,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3B5806D5286994E200E7B8BF /* ChessLogic */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ChessLogic;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3BA507CB286043B2005034CE /* Project object */;
 }

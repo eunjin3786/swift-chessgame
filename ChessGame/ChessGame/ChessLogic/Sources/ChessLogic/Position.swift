@@ -1,13 +1,18 @@
 import Foundation
 
-enum UserDirection {
+public enum UserDirection {
     case north
     case south
 }
 
-struct Position: Equatable {
+public struct Position: Equatable {
     let rank: Int // 가로
     let file: Int // 세로
+    
+    public init(rank: Int, file: Int) {
+        self.rank = rank
+        self.file = file
+    }
     
     func up() -> Position {
         return Position(rank: rank - 1, file: file)

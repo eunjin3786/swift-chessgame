@@ -73,7 +73,7 @@ class GamePresenterMock: GamePresentable {
     var displayMovablePositionsCallCount = 0
     var displayScoreCallCount = 0
     
-    func displayBoard(with snapshot: String) {
+    func displayBoard(with snapshot: [[String]]) {
         displayBoardCallCount += 1
     }
     
