@@ -6,23 +6,23 @@ enum UserDirection {
 }
 
 struct Position: Equatable {
-    let file: Int
-    let rank: Int
+    let rank: Int // 가로
+    let file: Int // 세로
     
     func up() -> Position {
-        return Position(file: file - 1, rank: rank)
+        return Position(rank: rank - 1, file: file)
     }
     
     func down() -> Position {
-        return Position(file: file + 1, rank: rank)
+        return Position(rank: rank + 1, file: file)
     }
     
     func left() -> Position {
-        return Position(file: file, rank: rank - 1)
+        return Position(rank: rank, file: file - 1)
     }
     
     func right() -> Position {
-        return Position(file: file, rank: rank + 1)
+        return Position(rank: rank, file: file + 1)
     }
 }
 

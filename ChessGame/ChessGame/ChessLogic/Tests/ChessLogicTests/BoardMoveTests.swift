@@ -12,11 +12,11 @@ class BoardMoveTests: XCTestCase {
         ])
         
         // then
-        let piece1 = board.piece(of: Position(file: 0, rank: 1))
+        let piece1 = board.piece(of: Position(rank: 0, file: 1))
         XCTAssertNotNil(piece1 as? Queen)
         XCTAssertEqual(piece1?.color, .black)
         
-        let piece2 = board.piece(of: Position(file: 1, rank: 0))
+        let piece2 = board.piece(of: Position(rank: 1, file: 0))
         XCTAssertNotNil(piece2 as? Luke)
         XCTAssertEqual(piece2?.color, .white)
     }
@@ -29,10 +29,10 @@ class BoardMoveTests: XCTestCase {
         ])
         
         // then
-        let piece1 = board.piece(of: Position(file: 2, rank: 1))
+        let piece1 = board.piece(of: Position(rank: 2, file: 1))
         XCTAssertNil(piece1)
         
-        let piece2 = board.piece(of: Position(file: -1, rank: 0))
+        let piece2 = board.piece(of: Position(rank: -1, file: 0))
         XCTAssertNil(piece2)
     }
     
@@ -46,7 +46,7 @@ class BoardMoveTests: XCTestCase {
         let initialSnapshot = board.snapshot()
         
         // when
-        let isMoved = board.move(from: Position(file: 0, rank: 0), to: Position(file: 0, rank: 1), userDirection: .north)
+        let isMoved = board.move(from: Position(rank: 0, file: 0), to: Position(rank: 0, file: 1), userDirection: .north)
 
         // then
         XCTAssertFalse(isMoved)
@@ -61,7 +61,7 @@ class BoardMoveTests: XCTestCase {
         ])
 
         // when
-        let isMoved = board.move(from: Position(file: 1, rank: 0), to: Position(file: 0, rank: 0), userDirection: .south)
+        let isMoved = board.move(from: Position(rank: 1, file: 0), to: Position(rank: 0, file: 0), userDirection: .south)
 
         // then
         XCTAssertTrue(isMoved)

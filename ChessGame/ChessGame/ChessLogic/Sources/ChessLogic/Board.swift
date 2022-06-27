@@ -60,8 +60,8 @@ struct Board {
     
     mutating func move(from: Position, to: Position, userDirection: UserDirection) -> Bool {
         if isValidMovement(from: from, to: to, userDirection: userDirection) {
-            pieces[to.file][to.rank] = pieces[from.file][from.rank]
-            pieces[from.file][from.rank] = nil
+            pieces[to.rank][to.file] = pieces[from.rank][from.file]
+            pieces[from.rank][from.file] = nil
             return true
         } else {
             return false
@@ -70,7 +70,7 @@ struct Board {
     
     func isValidMovement(from: Position, to: Position, userDirection: UserDirection) -> Bool {
         guard let fromPiece = piece(of: from) else { return false }
-        let movablePositions =  fromPiece.movablePositions(currentPosition: from, currentUserDirection: userDirection, boardMatrix: pieces.count)
+        let movablePositions = fromPiece.movablePositions(currentPosition: from, currentUserDirection: userDirection, boardMatrix: pieces.count)
         guard movablePositions.contains(where: { $0 == to }) else { return false }
         
         let toPiece = piece(of: to)
@@ -82,6 +82,6 @@ struct Board {
     }
     
     func piece(of position: Position) -> Piece? {
-        return pieces[safe: position.file]?[safe: position.rank] ?? nil
+        return pieces[safe: position.rank]?[safe: position.file] ?? nil
     }
 }

@@ -9,12 +9,12 @@ class PieceTests: XCTestCase {
         let whiteLuke = Luke(color: .white)
 
         // when
-        let black = blackLuke.movablePositions(currentPosition: Position(file: 0, rank: 0), currentUserDirection: .north, boardMatrix: 2)
-        let white = whiteLuke.movablePositions(currentPosition: Position(file: 1, rank: 0), currentUserDirection: .south, boardMatrix: 2)
+        let black = blackLuke.movablePositions(currentPosition: Position(rank: 0, file: 0), currentUserDirection: .north, boardMatrix: 2)
+        let white = whiteLuke.movablePositions(currentPosition: Position(rank: 1, file: 0), currentUserDirection: .south, boardMatrix: 2)
         
         // then
-        XCTAssertEqual(black, [Position(file: 1, rank: 0)])
-        XCTAssertEqual(white, [Position(file: 0, rank: 0)])
+        XCTAssertEqual(black, [Position(rank: 1, file: 0)])
+        XCTAssertEqual(white, [Position(rank: 0, file: 0)])
     }
     
     func test_movable_positions_of_pawn() {
@@ -23,12 +23,12 @@ class PieceTests: XCTestCase {
         let whitePawn = Pawn(color: .white)
 
         // when
-        let black = blackPawn.movablePositions(currentPosition: Position(file: 0, rank: 0), currentUserDirection: .north, boardMatrix: 2)
-        let white = whitePawn.movablePositions(currentPosition: Position(file: 1, rank: 0), currentUserDirection: .south, boardMatrix: 2)
+        let black = blackPawn.movablePositions(currentPosition: Position(rank: 0, file: 0), currentUserDirection: .north, boardMatrix: 2)
+        let white = whitePawn.movablePositions(currentPosition: Position(rank: 1, file: 0), currentUserDirection: .south, boardMatrix: 2)
         
         // then
-        XCTAssertEqual(black, [Position(file: 1, rank: 0)])
-        XCTAssertEqual(white, [Position(file: 0, rank: 0)])
+        XCTAssertEqual(black, [Position(rank: 1, file: 0)])
+        XCTAssertEqual(white, [Position(rank: 0, file: 0)])
     }
     
     func test_movable_positions_of_knight() {
@@ -37,12 +37,12 @@ class PieceTests: XCTestCase {
         let whiteKnight = Knight(color: .white)
 
         // when
-        let black = blackKnight.movablePositions(currentPosition: Position(file: 0, rank: 0), currentUserDirection: .north, boardMatrix: 2)
-        let white = whiteKnight.movablePositions(currentPosition: Position(file: 1, rank: 0), currentUserDirection: .south, boardMatrix: 2)
+        let black = blackKnight.movablePositions(currentPosition: Position(rank: 0, file: 0), currentUserDirection: .north, boardMatrix: 2)
+        let white = whiteKnight.movablePositions(currentPosition: Position(rank: 1, file: 0), currentUserDirection: .south, boardMatrix: 2)
         
         // then
-        XCTAssertEqual(black, [Position(file: 0, rank: 1)])
-        XCTAssertEqual(white, [Position(file: 1, rank: 1)])
+        XCTAssertEqual(black, [Position(rank: 0, file: 1)])
+        XCTAssertEqual(white, [Position(rank: 1, file: 1)])
     }
     
     func test_movable_positions_of_bishop() {
@@ -51,12 +51,12 @@ class PieceTests: XCTestCase {
         let whiteBishop = Bishop(color: .white)
 
         // when
-        let black = blackBishop.movablePositions(currentPosition: Position(file: 0, rank: 0), currentUserDirection: .north, boardMatrix: 2)
-        let white = whiteBishop.movablePositions(currentPosition: Position(file: 1, rank: 0), currentUserDirection: .south, boardMatrix: 2)
+        let black = blackBishop.movablePositions(currentPosition: Position(rank: 0, file: 0), currentUserDirection: .north, boardMatrix: 2)
+        let white = whiteBishop.movablePositions(currentPosition: Position(rank: 1, file: 0), currentUserDirection: .south, boardMatrix: 2)
         
         // then
-        XCTAssertEqual(black, [Position(file: 1, rank: 1)])
-        XCTAssertEqual(white, [Position(file: 0, rank: 1)])
+        XCTAssertEqual(black, [Position(rank: 1, file: 1)])
+        XCTAssertEqual(white, [Position(rank: 0, file: 1)])
     }
     
     func test_movable_positions_of_queen() {
@@ -65,18 +65,18 @@ class PieceTests: XCTestCase {
         let whiteQueen = Queen(color: .white)
 
         // when
-        let black = blackQueen.movablePositions(currentPosition: Position(file: 0, rank: 0), currentUserDirection: .north, boardMatrix: 2)
-        let white = whiteQueen.movablePositions(currentPosition: Position(file: 1, rank: 0), currentUserDirection: .south, boardMatrix: 2)
+        let black = blackQueen.movablePositions(currentPosition: Position(rank: 0, file: 0), currentUserDirection: .north, boardMatrix: 2)
+        let white = whiteQueen.movablePositions(currentPosition: Position(rank: 1, file: 0), currentUserDirection: .south, boardMatrix: 2)
         
         // then
         XCTAssertEqual(black, [
-            Position(file: 1, rank: 0),
-            Position(file: 1, rank: 1)]
+            Position(rank: 1, file: 0),
+            Position(rank: 1, file: 1)]
         )
         
         XCTAssertEqual(white, [
-            Position(file: 0, rank: 0),
-            Position(file: 0, rank: 1)
+            Position(rank: 0, file: 0),
+            Position(rank: 0, file: 1)
         ])
     }
 }
